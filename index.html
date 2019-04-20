@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body
+{
+    background-color: lightPink;
+    	background-image: linear-gradient(to right, lightPink ,white);
+    font-family: verdana;
+    text-align: center;
+    color: black;
+}
+a
+{
+    color: black;
+}
+table {
+    border-collapse: collapse;
+    width: 10%;
+    text-align: center;
+}
+tr:hover {
+	background-color: silver;
+	border: 2px solid black;
+}
+a:hover
+{
+     color: MistyRose;
+	
+}
+</style>
+	
+    <title>Home</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href="{{ url_for('static', filename='css/all.css') }}">
+</head>
+<body>
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                {% if session_user_name %}
+                    <h1>Welcome <b>{{ session_user_name }}</b></h1>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+<table align="center">
+<tr><td><p><a class="button" style='font-size: 24px' href="{{ url_for('result') }}">Residents <i class='far fa-address-card'></i></button> </a></p></td></tr>
+</table>
+</body>
+</html>
